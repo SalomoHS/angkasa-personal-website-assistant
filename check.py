@@ -1,7 +1,5 @@
-from pinecone import Pinecone
-print(f"Lokasi file pinecone: {Pinecone.__file__}")
-try:
-    from pinecone import Pinecone
-    print("Berhasil impor class Pinecone!")
-except ImportError as e:
-    print(f"Gagal: {e}")
+import os
+from dotenv import load_dotenv
+load_dotenv()
+print("TES: ", os.getenv('GOOGLE_API_KEY'))
+print("fsdf: ", os.environ.get("GOOGLE_API_KEY"))
