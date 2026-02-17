@@ -10,6 +10,7 @@ class ChatMessage(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
+    session_id: str
     query: str
     chat_history: List[ChatMessage] = Field(default_factory=list)
 

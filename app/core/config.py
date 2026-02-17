@@ -17,5 +17,9 @@ class Config(BaseSettings):
     LANGFUSE_BASE_URL: str = os.getenv('LANGFUSE_BASE_URL')
 
     ENVIRONMENT: str = os.getenv('ENVIRONMENT', 'development')
+    os.environ["LANGFUSE_TRACING_ENVIRONMENT"] = ENVIRONMENT
+    os.environ["OTEL_SERVICE_NAME"] = os.getenv('OTEL_SERVICE_NAME', 'ask-angkasa')
+
+    ANGKASA_HOST: str = os.getenv('ANGKASA_HOST')
 
 config = Config()

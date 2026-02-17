@@ -11,6 +11,6 @@ def get_ai_service():
 @router.post("/chat")
 async def chat(request: ChatRequest, chat_service: ChatService = Depends(get_ai_service)):
     return StreamingResponse(
-        chat_service.stream_message(query=request.query, chat_history=request.chat_history),
+        chat_service.stream_message(session_id=request.session_id,query=request.query, chat_history=request.chat_history),
         media_type="text/plain"
     )
