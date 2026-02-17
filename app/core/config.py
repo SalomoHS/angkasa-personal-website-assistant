@@ -16,4 +16,6 @@ class Config(BaseSettings):
     LANGFUSE_PUBLIC_KEY: str = os.getenv('LANGFUSE_PUBLIC_KEY')
     LANGFUSE_BASE_URL: str = os.getenv('LANGFUSE_BASE_URL')
 
+    ENVIRONMENT: str = os.getenv('ENVIRONMENT', 'development')
+
 config = Config()
