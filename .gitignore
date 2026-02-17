@@ -16,3 +16,4 @@ test.ipynb
 .vercel
 vercel.json
 api/
+runtime.txt

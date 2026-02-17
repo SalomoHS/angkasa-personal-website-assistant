@@ -9,8 +9,11 @@ dependencies = [
     "ipykernel>=7.2.0",
     "langchain>=1.2.10",
     "langchain-community>=0.4.1",
+    "langchain-core>=1.2.12",
     "langchain-google-genai>=4.2.0",
-    "pinecone>=8.0.1",
+    "langchain-pinecone>=0.2.13",
+    "langfuse>=3.14.2",
+    "pydantic>=2.12.5",
     "python-dateutil>=2.9.0.post0",
     "uvicorn>=0.40.0",
 ]

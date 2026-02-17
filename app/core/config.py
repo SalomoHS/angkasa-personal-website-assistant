@@ -6,8 +6,6 @@ load_dotenv()
 
 class Config(BaseSettings):
     GOOGLE_API_KEY: str = os.getenv('GOOGLE_API_KEY')
-    LANGUAGE_MODEL_NAME: str = os.getenv('LANGUAGE_MODEL_NAME')
-    EMBEDDING_MODEL_NAME: str = os.getenv('EMBEDDING_MODEL_NAME')
 
     PINECONE_API_KEY: str = os.getenv('PINECONE_API_KEY')
     PINECONE_INDEX_NAME: str = os.getenv('PINECONE_INDEX_NAME')
