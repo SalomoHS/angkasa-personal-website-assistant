@@ -9,5 +9,10 @@ test/
 .env
 kb.txt
 test.ipynb
+.pytest_cache/
 # Virtual environments
 .venv
+.vercelignore
+.vercel
+vercel.json
+api/

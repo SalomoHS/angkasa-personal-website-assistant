@@ -3,7 +3,7 @@ name = "personal-website-assistant"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.129.0",
     "ipykernel>=7.2.0",
