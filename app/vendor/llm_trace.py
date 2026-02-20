@@ -5,7 +5,8 @@ from app.core.config import config
 Langfuse(
         public_key=config.LANGFUSE_PUBLIC_KEY,
         secret_key=config.LANGFUSE_SECRET_KEY,
-        host=config.LANGFUSE_BASE_URL  
+        host=config.LANGFUSE_BASE_URL,
+        timeout=10
     )
 
 def get_langfuse_client():

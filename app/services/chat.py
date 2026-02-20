@@ -1,21 +1,19 @@
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
+from fastapi import Request
 
-from app.vendor.vector_db import get_retrieval
-from app.vendor.ai import get_llm
-from app.vendor.llm_trace import get_langfuse_client, get_langfuse_prompt, get_langfuse_callback_handler, get_propagate_attributes
 from app.core.config import config
 
 class ChatService():
-    def __init__(self):
-        self.llm = get_llm()
-        self.retriever = get_retrieval()
+    def __init__(self, request: Request):
+        self.llm = request.app.state.llm
+        self.retriever = request.app.state.retriever
         
-        self.langfuse_client = get_langfuse_client()
-        self.langfuse_prompt = get_langfuse_prompt("angkasa-personal-website-assistant", label=["production"])
-        self.langfuse_callback_handler = get_langfuse_callback_handler()
-        self.propagate_attributes = get_propagate_attributes()
+        self.langfuse_client = request.app.state.langfuse_client
+        self.langfuse_prompt = request.app.state.langfuse_prompt
+        self.langfuse_callback_handler = request.app.state.langfuse_callback_handler
+        self.propagate_attributes = request.app.state.propagate_attributes
 
         self.ask_prompt = ChatPromptTemplate.from_messages([
             ("system", self.langfuse_prompt.prompt),
