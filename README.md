@@ -1,6 +1,7 @@
 # Personal Website Assistant
 
 ## Architecture
+![ANGKASA ARCHITECTURE](https://github.com/user-attachments/assets/2fc12e03-6c96-410b-b954-015b68fdc22c)
 
 ## Project Overview
 
